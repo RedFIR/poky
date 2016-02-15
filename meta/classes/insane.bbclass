@@ -792,7 +792,7 @@ def package_qa_walk(warnfuncs, errorfuncs, skip, package, d):
             elf = oe.qa.ELFFile(path)
             try:
                 elf.open()
-            except:
+            except ValueError:
                 elf = None
             for func in warnfuncs:
                 func(path, package, d, elf, warnings)
